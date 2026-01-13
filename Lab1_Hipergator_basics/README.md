@@ -1,7 +1,5 @@
 # Hipergator and command line basics
 
-Spring 2026
-
 ## 1. Prior to this lab you should have done the following:
 
 1. Obtained a Hipergator account and tested that you can login
