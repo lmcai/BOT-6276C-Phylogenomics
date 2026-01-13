@@ -1,9 +1,6 @@
----
-title: "Hipergator and command line basics"
-author: "BOT 6276, Phylogenomics"
-date: "Spring 2020"
-output: pdf_document
----
+# Hipergator and command line basics
+
+Spring 2026
 
 ## 1. Prior to this lab you should have done the following:
 
@@ -11,9 +8,9 @@ output: pdf_document
 2. Installed the following software on your laptop:
     + Terminal (Mac) or PC equivalent (e.g., XTerm)
     + Cyberduck (Mac) or PC equivalent (e.g., Putty)
-    + TextWrangler (Mac) or PC equivalent (e.g., Notepad)
+    + BBEdit (Mac) or PC equivalent (e.g., Notepad)
 3. Configured Cyberduck (or equivalent) to work with Hipergator
-4. Downloaded the file "dummy.txt" from Canvas to your laptop
+4. Downloaded the file "dummy.txt" to your laptop
 
 ## 2. Getting onto the server
 
