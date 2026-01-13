@@ -1,0 +1,10 @@
+dummy text file for Lab1
+more dummy text file for Lab1
+even more dummy text file for Lab1!
+there's still more!
+a little more text for Lab1...
+almost at the end of this text
+getting closer
+nearly there
+just a little more
+this is the last line of the file!
