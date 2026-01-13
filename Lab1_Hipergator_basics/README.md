@@ -10,7 +10,7 @@ Spring 2026
     + Cyberduck (Mac) or PC equivalent (e.g., Putty)
     + BBEdit (Mac) or PC equivalent (e.g., Notepad)
 3. Configured Cyberduck (or equivalent) to work with Hipergator
-4. Downloaded the file "dummy.txt" to your laptop
+4. Downloaded the file [dummy.txt](Data/dummy.txt) to your laptop
 
 ## 2. Getting onto the server
 
