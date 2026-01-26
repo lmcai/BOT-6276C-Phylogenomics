@@ -1,0 +1,236 @@
+IQ-TREE version 3.0.1 for MacOS ARM 64-bit built Jul  9 2025
+Developed by Bui Quang Minh, Thomas Wong, Nhan Ly-Trong, Huaiyan Ren
+Contributed by Lam-Tung Nguyen, Dominik Schrempf, Chris Bielow,
+Olga Chernomor, Michael Woodhams, Diep Thi Hoang, Heiko Schmidt
+
+Host:    ls-bio-limingcais-2023-Macbook-Pro.local (SSE4.2, 36 GB RAM)
+Command: iqtree3 -s /Users/limingcai/Documents/GitHub/BOT-6276C-Phylogenomics/Lab2_IQTREE/primates.fasta -p /Users/limingcai/Documents/GitHub/BOT-6276C-Phylogenomics/Lab2_IQTREE/primates_partition -B 1000 -nt 2 -g /Users/limingcai/Documents/GitHub/BOT-6276C-Phylogenomics/Lab2_IQTREE/primates_constraint.tre
+Seed:    795672 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Mon Jan 26 12:15:59 2026
+Kernel:  SSE2 - 2 threads (12 CPU cores detected)
+
+Reading partition model file /Users/limingcai/Documents/GitHub/BOT-6276C-Phylogenomics/Lab2_IQTREE/primates_partition ...
+Reading alignment file /Users/limingcai/Documents/GitHub/BOT-6276C-Phylogenomics/Lab2_IQTREE/primates.fasta ... Fasta format detected
+Reading fasta file: done in 0.000322104 secs using 69.54% CPU
+Alignment most likely contains DNA/RNA sequences
+Constructing alignment: done in 0.000904083 secs using 56.08% CPU
+Alignment has 12 sequences with 898 columns, 413 distinct patterns
+367 parsimony-informative, 154 singleton sites, 377 constant sites
+                  Gap/Ambiguity  Composition  p-value
+Analyzing sequences: done in 3.31402e-05 secs using 87.51% CPU
+   1  Tarsius_syrichta    0.33%    failed      1.11%
+   2  Lemur_catta         0.33%    passed     10.98%
+   3  Homo_sapiens        0.22%    passed     30.81%
+   4  Pan                 0.22%    passed     56.54%
+   5  Gorilla             0.22%    passed     53.46%
+   6  Pongo               0.33%    failed      4.15%
+   7  Hylobates           0.22%    passed     47.17%
+   8  Macaca_fuscata      0.22%    passed     98.12%
+   9  M_mulatta           0.22%    passed     99.35%
+  10  M_fascicularis      0.22%    passed     99.16%
+  11  M_sylvanus          0.22%    passed     73.86%
+  12  Saimiri_sciureus    0.56%    passed      8.73%
+****  TOTAL               0.28%  2 sequences failed composition chi2 test (p-value<5%; df=3)
+
+Partition file is not in NEXUS format, assuming RAxML-style partition file...
+Subset	Type	Seqs	Sites	Infor	Invar	Model	Name
+1	DNA	12	693	313	252	GTR	coding
+2	DNA	12	205	54	125	GTR	noncoding
+Degree of missing data: 0.000
+Info: multi-threading strategy over partitions
+Reading constraint tree /Users/limingcai/Documents/GitHub/BOT-6276C-Phylogenomics/Lab2_IQTREE/primates_constraint.tre...
+WARNING: Rooted constraint tree will be treated as unrooted tree
+INFO: Constraint tree will be applied to ML tree and all bootstrap trees.
+Creating fast initial parsimony tree by random order stepwise addition...
+0.002 seconds, parsimony score: 1240 (based on 521 sites)
+Generating 1000 samples for ultrafast bootstrap (seed: 795672)...
+
+NOTE: 1 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -6506.351
+Current log-likelihood at step 1: -6063.717
+Current log-likelihood at step 2: -6059.758
+Current log-likelihood at step 3: -6059.628
+Current log-likelihood at step 4: -6059.483
+Current log-likelihood at step 5: -6059.482
+Partition-specific rates:  1.131 0.558
+Parameters optimization took 4 rounds (0.017 sec)
+
+Wrote distance file to... 
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 99 parsimony trees... 0.021 second
+Computing log-likelihood of 54 initial trees ... 0.053 seconds
+Current best score: -6059.482
+
+Do NNI search on 20 best initial trees
+Optimizing NNI: done in 0.00256395 secs using 87.95% CPU
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -6059.482
+Current log-likelihood at step 1: -6059.482
+Parameters optimization took 0 rounds (0.001 sec)
+
+BETTER TREE FOUND at iteration 1: -6059.482
+Optimizing NNI: done in 0.0043571 secs using 84.14% CPU
+Optimizing NNI: done in 0.00371313 secs using 85.99% CPU
+Optimizing NNI: done in 0.00438905 secs using 83.94% CPU
+Optimizing NNI: done in 0.00426793 secs using 83.6% CPU
+Optimizing NNI: done in 0.00377202 secs using 83.3% CPU
+Optimizing NNI: done in 0.0043211 secs using 82.94% CPU
+Optimizing NNI: done in 0.00451207 secs using 86.57% CPU
+Optimizing NNI: done in 0.00420618 secs using 85.87% CPU
+Optimizing NNI: done in 0.004632 secs using 86.53% CPU
+Iteration 10 / LogL: -6059.554 / Time: 0h:0m:0s
+Optimizing NNI: done in 0.00465798 secs using 86.05% CPU
+Optimizing NNI: done in 0.00464511 secs using 86.56% CPU
+Optimizing NNI: done in 0.00716901 secs using 85.9% CPU
+Optimizing NNI: done in 0.00474095 secs using 86.94% CPU
+Optimizing NNI: done in 0.00482202 secs using 86.62% CPU
+Optimizing NNI: done in 0.00475311 secs using 86.6% CPU
+Optimizing NNI: done in 0.00425005 secs using 84.66% CPU
+Optimizing NNI: done in 0.00472498 secs using 84.87% CPU
+Optimizing NNI: done in 0.00590801 secs using 83.48% CPU
+Optimizing NNI: done in 0.00571704 secs using 84.68% CPU
+Iteration 20 / LogL: -6059.531 / Time: 0h:0m:0s
+Finish initializing candidate tree set (1)
+Current best tree score: -6059.482 / CPU time: 0.171
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Optimizing NNI: done in 0.00314999 secs using 93.4% CPU
+UPDATE BEST LOG-LIKELIHOOD: -6059.482
+Optimizing NNI: done in 0.00401807 secs using 93.65% CPU
+Optimizing NNI: done in 0.00237107 secs using 97.26% CPU
+Optimizing NNI: done in 0.00414014 secs using 82.8% CPU
+Optimizing NNI: done in 0.00400209 secs using 79.53% CPU
+Optimizing NNI: done in 0.00304699 secs using 85.43% CPU
+Optimizing NNI: done in 0.00337791 secs using 81.32% CPU
+Optimizing NNI: done in 0.00355196 secs using 85.42% CPU
+Optimizing NNI: done in 0.00460196 secs using 80.94% CPU
+Optimizing NNI: done in 0.00511503 secs using 79.86% CPU
+Iteration 30 / LogL: -6059.485 / Time: 0h:0m:0s (0h:0m:0s left)
+Optimizing NNI: done in 0.0062542 secs using 79.34% CPU
+Optimizing NNI: done in 0.00341082 secs using 81.3% CPU
+Optimizing NNI: done in 0.00341702 secs using 82.44% CPU
+Optimizing NNI: done in 0.00496602 secs using 81.45% CPU
+Optimizing NNI: done in 0.00636983 secs using 79.96% CPU
+Optimizing NNI: done in 0.00366497 secs using 86.6% CPU
+Optimizing NNI: done in 0.00609493 secs using 76.56% CPU
+Optimizing NNI: done in 0.00356197 secs using 81.78% CPU
+Optimizing NNI: done in 0.00339293 secs using 81.88% CPU
+Optimizing NNI: done in 0.00505018 secs using 78.61% CPU
+Iteration 40 / LogL: -6059.496 / Time: 0h:0m:0s (0h:0m:0s left)
+Optimizing NNI: done in 0.00342298 secs using 83.76% CPU
+Optimizing NNI: done in 0.00416207 secs using 82.7% CPU
+Optimizing NNI: done in 0.00360703 secs using 85.14% CPU
+Optimizing NNI: done in 0.0041678 secs using 83.21% CPU
+Optimizing NNI: done in 0.00344706 secs using 83.78% CPU
+Optimizing NNI: done in 0.00459909 secs using 81.97% CPU
+Optimizing NNI: done in 0.00247383 secs using 87.52% CPU
+Optimizing NNI: done in 0.00346088 secs using 81.19% CPU
+Optimizing NNI: done in 0.00348616 secs using 81.24% CPU
+Optimizing NNI: done in 0.0046041 secs using 82.17% CPU
+Iteration 50 / LogL: -6059.484 / Time: 0h:0m:0s (0h:0m:0s left)
+Log-likelihood cutoff on original alignment: -6094.511
+Optimizing NNI: done in 0.00299001 secs using 86.19% CPU
+Optimizing NNI: done in 0.00357199 secs using 79.76% CPU
+Optimizing NNI: done in 0.00549889 secs using 78.89% CPU
+Optimizing NNI: done in 0.00350404 secs using 79.62% CPU
+Optimizing NNI: done in 0.00398302 secs using 80.22% CPU
+Optimizing NNI: done in 0.00598598 secs using 81.49% CPU
+Optimizing NNI: done in 0.00372005 secs using 86.48% CPU
+Optimizing NNI: done in 0.00539994 secs using 81.56% CPU
+Optimizing NNI: done in 0.00472808 secs using 81.13% CPU
+Optimizing NNI: done in 0.00250292 secs using 84.7% CPU
+Iteration 60 / LogL: -6059.482 / Time: 0h:0m:0s (0h:0m:0s left)
+Optimizing NNI: done in 0.00661492 secs using 80.65% CPU
+Optimizing NNI: done in 0.00704694 secs using 77.25% CPU
+Optimizing NNI: done in 0.00399685 secs using 82.39% CPU
+Optimizing NNI: done in 0.00500703 secs using 81.43% CPU
+Optimizing NNI: done in 0.00502086 secs using 81.3% CPU
+Optimizing NNI: done in 0.00623012 secs using 80.5% CPU
+Optimizing NNI: done in 0.006109 secs using 76.61% CPU
+Optimizing NNI: done in 0.00553989 secs using 79.77% CPU
+Optimizing NNI: done in 0.00375295 secs using 86.25% CPU
+Optimizing NNI: done in 0.0034492 secs using 83.29% CPU
+Iteration 70 / LogL: -6059.482 / Time: 0h:0m:0s (0h:0m:0s left)
+Optimizing NNI: done in 0.00466299 secs using 79.84% CPU
+Optimizing NNI: done in 0.00707793 secs using 77.64% CPU
+Optimizing NNI: done in 0.00244808 secs using 86.97% CPU
+Optimizing NNI: done in 0.00408006 secs using 79.95% CPU
+Optimizing NNI: done in 0.00488591 secs using 77.53% CPU
+Optimizing NNI: done in 0.00359797 secs using 82.49% CPU
+Optimizing NNI: done in 0.00365901 secs using 83.88% CPU
+Optimizing NNI: done in 0.00462222 secs using 80.63% CPU
+Optimizing NNI: done in 0.00500584 secs using 80.73% CPU
+Optimizing NNI: done in 0.00373101 secs using 83.97% CPU
+Iteration 80 / LogL: -6059.482 / Time: 0h:0m:0s (0h:0m:0s left)
+Optimizing NNI: done in 0.00528097 secs using 77.9% CPU
+Optimizing NNI: done in 0.00371194 secs using 86.75% CPU
+Optimizing NNI: done in 0.00660992 secs using 80.32% CPU
+Optimizing NNI: done in 0.004565 secs using 79.47% CPU
+Optimizing NNI: done in 0.00400996 secs using 79.85% CPU
+Optimizing NNI: done in 0.00465512 secs using 81.48% CPU
+Optimizing NNI: done in 0.00405788 secs using 80.56% CPU
+Optimizing NNI: done in 0.00360608 secs using 87.57% CPU
+Optimizing NNI: done in 0.00356698 secs using 88.59% CPU
+Optimizing NNI: done in 0.00345612 secs using 81.02% CPU
+Iteration 90 / LogL: -6059.482 / Time: 0h:0m:0s (0h:0m:0s left)
+Optimizing NNI: done in 0.00522709 secs using 78.92% CPU
+Optimizing NNI: done in 0.00368309 secs using 88.35% CPU
+Optimizing NNI: done in 0.00347304 secs using 79.61% CPU
+Optimizing NNI: done in 0.00345707 secs using 80.7% CPU
+Optimizing NNI: done in 0.00627112 secs using 78.28% CPU
+Optimizing NNI: done in 0.00357413 secs using 79.38% CPU
+Optimizing NNI: done in 0.00250196 secs using 85.13% CPU
+Optimizing NNI: done in 0.00543189 secs using 81.06% CPU
+Optimizing NNI: done in 0.00347018 secs using 81.41% CPU
+Optimizing NNI: done in 0.00462198 secs using 81.59% CPU
+Iteration 100 / LogL: -6059.484 / Time: 0h:0m:0s (0h:0m:0s left)
+Log-likelihood cutoff on original alignment: -6093.333
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 1.000
+Optimizing NNI: done in 0.00249887 secs using 85.52% CPU
+Optimizing NNI: done in 0.00372601 secs using 86.9% CPU
+TREE SEARCH COMPLETED AFTER 102 ITERATIONS / Time: 0h:0m:0s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+Initial log-likelihood: -6059.482
+Current log-likelihood at step 1: -6059.482
+Partition-specific rates:  1.131 0.558
+Parameters optimization took 0 rounds (0.001 sec)
+
+Partition information was printed to /Users/limingcai/Documents/GitHub/BOT-6276C-Phylogenomics/Lab2_IQTREE/primates_partition.best_model.nex
+BEST SCORE FOUND : -6059.482
+Creating bootstrap support values...
+Split supports printed to NEXUS file /Users/limingcai/Documents/GitHub/BOT-6276C-Phylogenomics/Lab2_IQTREE/primates_partition.splits.nex
+Total tree length: 1.742
+
+Total number of iterations: 102
+CPU time used for tree search: 0.520 sec (0h:0m:0s)
+Wall-clock time used for tree search: 0.621 sec (0h:0m:0s)
+Total CPU time used: 0.569 sec (0h:0m:0s)
+Total wall-clock time used: 0.671 sec (0h:0m:0s)
+
+Computing bootstrap consensus tree...
+Reading input file /Users/limingcai/Documents/GitHub/BOT-6276C-Phylogenomics/Lab2_IQTREE/primates_partition.splits.nex...
+12 taxa and 33 splits.
+Consensus tree written to /Users/limingcai/Documents/GitHub/BOT-6276C-Phylogenomics/Lab2_IQTREE/primates_partition.contree
+Reading input trees file /Users/limingcai/Documents/GitHub/BOT-6276C-Phylogenomics/Lab2_IQTREE/primates_partition.contree
+Log-likelihood of consensus tree: -6059.482
+
+Analysis results written to: 
+  IQ-TREE report:                /Users/limingcai/Documents/GitHub/BOT-6276C-Phylogenomics/Lab2_IQTREE/primates_partition.iqtree
+  Maximum-likelihood tree:       /Users/limingcai/Documents/GitHub/BOT-6276C-Phylogenomics/Lab2_IQTREE/primates_partition.treefile
+
+Ultrafast bootstrap approximation results written to:
+  Split support values:          /Users/limingcai/Documents/GitHub/BOT-6276C-Phylogenomics/Lab2_IQTREE/primates_partition.splits.nex
+  Consensus tree:                /Users/limingcai/Documents/GitHub/BOT-6276C-Phylogenomics/Lab2_IQTREE/primates_partition.contree
+  Screen log file:               /Users/limingcai/Documents/GitHub/BOT-6276C-Phylogenomics/Lab2_IQTREE/primates_partition.log
+
+Date and Time: Mon Jan 26 12:16:00 2026
