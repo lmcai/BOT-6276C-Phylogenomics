@@ -49,11 +49,11 @@ iqtree3 -s primates.fasta
 
 Once your analysis has completed, you'll have a bunch of output files to look at. This is what the outputs are:
 
-- RAxML_besttree.$identifier                  #single best tree with branch lengths
-- RAxML_bipartitions.$identifier              #best tree with bootstrap support values
-- RAxML_bipartitionsBranchLabels.$identifier  #another format of the previous output
-- RAxML_bootstrap.$identifier                 #topology from each bootstrap replicate
-- RAxML_info.$identifier                      #lots of information about the run
+- primates.fasta.treefile		#single best tree with branch lengths
+- primates.fasta.log			#log file containing lots of information about the run
+- primates.fasta.iqtree			#main report file detailing model selection, log-likelihood, and branch support
+- primates.fasta.mldist			#pairwise genetic distance calculated from the best model
+- primates.fasta.ckp.gz			#check point file if you need to resume the run
 
 
 2. Look at `primates.fasta.log`, look for the following information
