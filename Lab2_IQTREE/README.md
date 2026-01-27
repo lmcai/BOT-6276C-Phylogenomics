@@ -113,9 +113,24 @@ d. How different are the constrained and unconstrained versions of the output tr
 Complete the same steps above on HiperGtor
 
 1. Log on to Hipergator 
-2. `cd` into your scratch directory 
-3. Make a new directory for IQTREE and go into it 
-4. Upload the files from your computer to your folder.
+2. `cd` into your scratch directory
+```
+cd /blue/bot6276/<user>
+```
+3. Make a new directory for IQTREE and go into it
+```
+mkdir Lab2
+cd Lab2
+```
+
+4. Upload all files from your computer to `/blue/bot6276/<user>/Lab2`. When you list the files under this folder, you should see this:
+```
+$ls /blue/bot6276/<user>/Lab2
+primates_constraint.tre
+primates_partition
+primates.fasta
+iqtree.sh
+```
 
 Open the .slurm script in BBEdit or other text editing program and take a look at it. This is a standard submission script for HPG. The way HPG works, you do not in general run jobs interactively, and the HPG folks will get very angry if you do! You run jobs by writing a configuration, or submission, script, like this one, and then you submit it to HPG. HPG handles scheduling of jobs, and allocating resources to them appropriately, so that everyone's jobs get sorted out correctly and jobs run in an ordered and timely manner. 
 
@@ -123,17 +138,21 @@ When you first open a submission script, you'll want to change a few things righ
 
 ```
 #!/bin/sh
-#SBATCH --account=zoo6927
-#SBATCH --qos=zoo6927
+#SBATCH --account=bot6276  #group name with which you are affiliated and resource will be used
+#SBATCH --qos=bot6276
 #SBATCH --job-name=IQTREE   #Job name  
 #SBATCH --cpus-per-task=1   # Number of cores: Can also use -c=4 
-#SBATCH --mem-per-cpu=4gb   # Per processor memory
-#SBATCH -t 12:00:00   # Walltime
-#SBATCH -o <RAxML10>.%j.out   # Name output file; ONLY change the part between the carrots!
-#
+#SBATCH --mem-per-cpu=4gb   # Per processor memory limit
+#SBATCH -t 12:00:00   # Walltime limit to run the script
+#SBATCH -o IQTREE.%j.out   # Name output file; ONLY change the part between the carrots!
 pwd; hostname; date
 ```
-You'll want to change the account and qos since as of today we still do not have a course account. Make sure the email address is set to yours, and change the prefix it uses for the output files (this is the last SBATCH line). Make sure that you remove all the carrots (these: `< >`) when you change these things! There are three lines in the middle that handle the request you're making from the server; the first two govern how many cpus you're asking for, how much memory each should get, and how long you want the analysis to run for. You'll get a better feeling for setting these the more you use the server. And when you're done with this class, you'll be using the cpus your PI has invested in, so if you use them all up, no one else in the group can run analyses until yours are done. It's important to be a good citizen and not hog the nodes.
+You can also make SLURM send you email when the job is done by adding:
+```
+#SBATCH --mail-type=END,FAIL          # Mail events (NONE, BEGIN, END, FAIL, ALL)
+#SBATCH --mail-user=<email>@ufl.edu     # Where to send mail      
+```
+Make sure the email address is set to yours. Make sure that you remove all the carrots (these: `< >`) when you change these things! There are three lines in the middle that handle the request you're making from the server; the first two govern how many cpus you're asking for, how much memory each should get, and how long you want the analysis to run for. You'll get a better feeling for setting these the more you use the server. And when you're done with this class, you'll be using the cpus your PI has invested in, so if you use them all up, no one else in the group can run analyses until yours are done. It's important to be a good citizen and not hog the nodes.
 
 The next few lines tell the server some information about where it should be working; in general, you submit a submission script from the working directory you are currently sitting in, which should contain, in addition to the submission script itself, all the files the server will then look for to run the analysis you've asked it to (if this is confusing, ask Emily for clarification). Leave all this alone and don't change it:
 ```
@@ -148,4 +167,17 @@ module load iq-tree
 ```
 There are hundreds of programs installed on the server, and it would be overwhelming for it to keep them constantly "on call". Instead, you call up the individual modules you want for the analysis you're going to run, using this `module load <module name>` command.
 
-Once the module is loaded, there are active command lines for the three IQTree runs. You can then follow the tutorial above to complete the analysis and look at the results.
+Once the module is loaded, there are active command lines for the three IQTree runs. The job can be simply submitted by the following command:
+```
+$sbatch iqtree.sh
+```
+It will spit back a line that gives you a job number for the job you just submitted. To check the status of
+your job, type this:
+```
+squeue -u <user>
+```
+This will report the status of all the jobs you currently have running. In the ST column, the letter R indicates that the job is currently running, and the time next to it tells you how long it’s been running. Once it’s running, you can refresh Cyberduck to see the new files that are being created, but don’t move or open them while it’s running or you will mess up the analysis. Depending on your email flag setup, you’ll get a message when the analysis starts, ends, and/or aborts.
+
+You can then follow the tutorial above to complete the analysis and look at the results.
+
+
