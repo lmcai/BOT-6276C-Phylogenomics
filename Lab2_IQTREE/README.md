@@ -4,7 +4,7 @@
 
 IQ-TREE [website](https://iqtree.github.io/)
 
-The walk-through below allows you to perform the analysis on your laptop. If you have a HiperGator account, you can submit a slurm job for IQ-TREE as well (see tutorial at the bottom). If you cannot run it on your computer or HiperGator, you can look at the outputs in the output folders.
+The walk-through below allows you to perform the analysis **locally on your laptop**. If you have a HiperGator account, you can submit a slurm job for IQ-TREE as well (**see tutorial at the bottom**). If you cannot run it on your computer or HiperGator, you can look at the outputs in the output folders.
 
 ## 2. Installation
 

@@ -22,7 +22,7 @@ ssh <user>@hpg.rc.ufl.edu
 
 Once you are logged on, you will see something like this: 
 ```
-[user@gator2 ~]$
+[user@login2 ~]$
 ```
 This tells you that you are now on Hipergator (HPG). Before you continue, you need to do another step to move to the appropriate place on HPG. By default, the place you land when you logon is your home folder, but this is NOT actually where you want to work. To change to the correct location, you will need to know the group that you're part of, and you'll use the 'cd' function to change directory (that's what cd stands for) to move there. First type 'pwd', which is the command to check your present working directory. You should see something like this:
 
@@ -33,14 +33,7 @@ pwd
 
 This is the location where we DON'T want to be. To get to the right place, enter the following:
 ```
-cd /ufrc/<group>/<user>
-pwd
-```
-The last command should now display exactly the location you entered with the `cd` command.
-
-For many of you, the only option of a place to work is your place in the course's directory, so you can use this command:
-```
-cd /ufrc/bot6276/<user>
+cd /blue/bot6276/<user>
 ```
 
 `pwd` is "present working directory" - this command will always give you your current location, i.e., the folder that you are working in at the moment. You can move around between directories easily, using `cd`, the command above where you moved from the home folder to the scratch folder (`cd` stands for "change directory").
@@ -65,9 +58,9 @@ In Cyberduck, navigate to the new Lab1 directory you created above, and drag "du
 
 ```
 $ pwd
-/ufrc/bot6276/<user>/Lab1
+/blue/bot6276/share/<user>/Lab1
 $ ls -l
--rw-rw-r--  1 <user> bot6276  214 Jan 25  2019 dummy.txt
+-rw-rw-r--  1 <user> bot6276  214 Jan 25  2026 dummy.txt
 ```
 
 Now we can practice a few more commands...
@@ -126,7 +119,7 @@ You can edit the file as you like. On a mac, ctrl-X closes it. Type 'Y' and then
 ### Nexus - very common (used in PAUP, MrBayes, etc.)
 First let's practice using the `cp`, or copy, command, to move some files from the shared area in our course directory to your personal directory. By using the copy command, you just create a copy in your directory rather than moving the file; in this way, it remains accessible to everyone else in the class (you all have access to the shared folder).
 
-First, check on where you are with `pwd`, and then move to your /ufrc/bot6276/<user>/Lab1 directory using `cd`.
+First, check on where you are with `pwd`, and then move to your /blue/bot6276/<user>/Lab1 directory using `cd`.
 
 Next, type the following:
 ```
