@@ -28,7 +28,7 @@ Olga Chernomor, Michael Woodhams, Diep Thi Hoang, Heiko Schmidt
 Usage: iqtree [-s ALIGNMENT] [-p PARTITION] [-m MODEL] [-t TREE] ...
 ```
 
-How do you specify the input alignment? How about output prefix? 
+Based on the IQTREE help information, how do you specify the input alignment? How about output prefix? 
 
 Scroll further down in the help until you find the `MODEL-FINDER` section. The default behaviour of IQ-TREE will run model test among all models available. But you can specify a subset to be included, such as `-m GTR`, which will only explore `GTR`, `GTR+F`, `GTR+I+F`, `GTR+I+F+G2`, etc.
 
@@ -36,11 +36,12 @@ Once you understand the flags in the command line and what they're doing, you're
 
 ## 3. Likelihood analyses
 
-IQ-TREE is a standard tool for ML analyses in phylogenetics. The most recent versions allow you to perform bootstrap analysis and search for the best-scoring ML tree in a single run. It can handle substantial datasets with thousands of loci, but we will work with a small primates dataset, which is typically used as an example in courses like this, to keep things fast. IQ-TREE takes FASTA or phylip formatted files for the alignment. You'll need to get the following files into your working folder, and remember to change the email address in the slurm submission script: 
-
-- primates.fasta
-- primates_constraint.tre
-- primates_partition
+IQ-TREE is a standard tool for ML analyses in phylogenetics. The most recent versions allow you to perform bootstrap analysis and search for the best-scoring ML tree in a single run. It can handle substantial datasets with thousands of loci, but we will work with a small primates dataset, which is typically used as an example in courses like this, to keep things fast. IQ-TREE takes FASTA or phylip formatted files for the alignment. You'll need to get the following files into your working folder: 
+```
+primates.fasta
+primates_constraint.tre
+primates_partition
+```
 
 1. Perform a default run of IQ-TREE using only the minimum input. Make sure you `cd` into the correct working directory where `primates.fasta` is located.
 ```
