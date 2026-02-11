@@ -164,7 +164,7 @@ echo There are $SLURM_CPUS_ON_NODE cores available.
 ```
 The next line tells the server to load the appropriate modules for the software and analyses that you want to run. In our current case, there's only one:
 ```
-module load iq-tree
+module load gcc/14.2.0 openmpi/5.0.7 iq-tree/3.0.1
 ```
 There are hundreds of programs installed on the server, and it would be overwhelming for it to keep them constantly "on call". Instead, you call up the individual modules you want for the analysis you're going to run, using this `module load <module name>` command.
 
