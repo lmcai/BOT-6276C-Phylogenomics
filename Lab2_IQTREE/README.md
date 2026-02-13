@@ -30,6 +30,8 @@ Usage: iqtree [-s ALIGNMENT] [-p PARTITION] [-m MODEL] [-t TREE] ...
 
 Based on the IQTREE help information, how do you specify the input alignment? How about output prefix? 
 
+ANS: `-s` for input aln and `--prefix` for output prefix
+
 Scroll further down in the help until you find the `MODEL-FINDER` section. The default behaviour of IQ-TREE will run model test among all models available. But you can specify a subset to be included, such as `-m GTR`, which will only explore `GTR`, `GTR+F`, `GTR+I+F`, `GTR+I+F+G2`, etc.
 
 Once you understand the flags in the command line and what they're doing, you're ready to run an analysis! Make sure you're in the correct working directory.
@@ -62,15 +64,53 @@ Once your analysis has completed, you'll have a bunch of output files to look at
 
 a. What's the `Host` (device) on which the analysis was run? What's the seed number (important for replication)?
 
+ANS: This will be specific to your run.
+
 b. How many taxa and characters are in this fasta file? How many of them are parsimony-informative? How many singleton?
+
+ANS: Alignment has 12 sequences with 898 sites. 367 parsimony-informative, 154 singleton sites.
 
 c. If no models are specified by `-m`, IQ-TREE performs ModelFinder. What does ModelFinder do? Comparing the scores between `JC+I+R3` and `F81+F+I+G4` from the log file, which model is better? Why? What is the best model selected under the AIC, AICc, and BIC criteria? Why are they different?
 
+ANS: ModelFinder tries to identify the best-fitting subsitution model. To compare `JC+I+R3` and `F81+F+I+G4`, locate their coresponding lines:
+
+```
+No. Model         -LnL         df  AIC          AICc         BIC
+15  JC+I+R3       6266.414     26  12584.828    12586.440    12709.632
+...
+69  F81+F+G4      6125.746     25  12301.491    12302.982    12421.495
+```
+F81+F+G4 is superior based on AIC, AICc, and BIC scores because the values are lower.
+
+The best model under each criteria is follows:
+```
+Akaike Information Criterion:           TVM+F+G4
+Corrected Akaike Information Criterion: TVM+F+G4
+Bayesian Information Criterion:         TPM2u+F+G4
+```
+They are different because of how free parameters are penalized, with BIC penalize strongly on the number of free parameters.
+
 d. What does `NNI` mean? What is IQ-TREE doing when it says `Optimizing NNI: ...`?
+
+ANS: `NNI` is a tree topology refining algorithm. IQ-TREE alternates tree tologies around the current tree to explore tree space and identify better fitting trees.
 
 e. What's the final optimal likelihood? What's the inferred rate parameters? Why are some of them equal to each other?
 
+ANS: 
+```
+Optimal log-likelihood: -5721.623
+Rate parameters:  A-C: 3.34392  A-G: 26.76078  A-T: 3.34392  C-G: 1.00000  C-T: 26.76078  G-T: 1.00000
+Base frequencies:  A: 0.324  C: 0.304  G: 0.106  T: 0.266
+```
+Some rates are equal to each other because they are symmatrical under the best model `TPM2u`, which has its specific assumptions: 
+```
+rAG=rCT(transitions share one rate)
+rAC=rAT!=rCG=rGT
+```
+
 f. View `primates.fasta.treefile` in FigTree or other tree viewing program. Is this a rooted or unrooted tree?
+
+ANS: unrooted
 
 3. We will run IQ-TREE again by adding `-nt 2` to use 2 threads to speed up the program. `-B 1000` to use ultrafast bootstrap to evaluate branch support, and `-p primates_partition`.
 
@@ -83,11 +123,19 @@ a. Open the partition info file `primates_partition`, what's the name and range 
 
 b. Now look at the log file `primates_partition.log`. What's the final optimal likelihood? How does it compare to the previous run?
 
+ANS: best likelihood score= -5899.779. It is lower than previous run, but it does not necessarily mean the tree is worse. We have included more parameters this time because of data partition, the likelihood is expected to drop a little.
+
 c. Look at the `primates_partition.best_model.nex` file. This file contains the best partition model inferred from the data, and rate parameters for each individual partition. What is the best model for each partition? Why is the rate different (read the [tutorial](https://iqtree.github.io/doc/Advanced-Tutorial#partitioned-analysis-for-multi-gene-alignments) and think about the difference between `-p`, `-q`, and `-Q`)? More specifically, how does the rate between coding and non-coding regions differ from each other?
+
+ANS: GTR for both partitions. the non-coding rate is higher as expected (GTR{15.122,45.6549,9.10676,9.82992,98.3016} for non-coding compared to GTR{6.79421,22.3723,4.10071,1.78118,22.4811} for coding)
 
 d. View `primates.fasta.treefile` in FigTree or other tree viewing program. Display the node labels. What's the ultrafast support value for the common ancestor of Homo_sapiens and Pongo?
 
+ANS: 97
+
 e. What command would you use if you want to run non-parametric bootstrap?
+
+ANS: `-b 100` for 100 non-parametric bootstrap
 
 4. We can also constrain the topology of the phylogeny and only optimize the branch length. 
 
@@ -100,13 +148,19 @@ iqtree3 -s primates.fasta -p primates_partition -B 1000 -nt 2 -g primates_constr
 
 a. What is the best score from this tree? How does it compare to previous results? What is your explanation for the relative scores from the three jobs? Is this what you would have expected, and why?
 
+ANS: best score -6059.482 is lowest compared to prevous runs. The very short internal branches of the constraint search plus the lower likelihood score indicate that the constrained topology fit worse to the data.
+
 b. Check the support values of constrained nodes? Why are they all 100?
+
+ANS: becuase the relationship of the constrained nodes does not change during tree search, they are expected to occur 100% in the boostrap replicate trees.
 
 c. Do you notice super-short branches in the tree from the constrained search? Why could it be the case?
 
+ANS: see above.
+
 d. How different are the constrained and unconstrained versions of the output tree topologies? Was using the constraint necessary to get the "correct" relationships, based on our prior knowledge?
 
-
+ANS: the constrained relationship of monophyletic (Pongo,Hylobates,Tarsius_syrichta,Saimiri_sciureus), which includes Orangutans to Gibbons and Squirrel Monkey, is unrealistic.
 
 ######################################################
 # If you have access to HiperGator
