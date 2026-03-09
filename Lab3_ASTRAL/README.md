@@ -35,11 +35,11 @@ astral.pthreads.sh
 
 ASTRAL is a summary method that will estimate an unrooted species tree from a set of input, unrooted gene trees. ASTRAL is statistically consistent under the multi-species coalescent (meaning that it is theoretically guaranteed to converge on the correct solution as more data are added). The input trees can be unresolved (i.e., have polytomies), contain missing taxa, or multiple tips with the same taxon name. There are various options available for multi-locus bootstrapping and other modifications (see: https://github.com/chaoszhang/ASTER), but here we will focus on the basics of how to use the software.
 
-ASTRAL is a java program that has already been installed on HPG and is easy to use. Another handy feature on HPG is that the command `module load astral` will automatically load the most recent version of the software that has been installed. The current version (as of March 2019) is version 5.6.2, which corresponds to ASTRAL-II. You can always load a specific version by modifying the load command as: `module load astral/4.10.7`, substituting the version number as appropriate to get the one you want. This is especially useful if a beta version has been released that is not the default version loaded with `module load astral`, but you want to test it out.
+ASTRAL is a java program that has already been installed on HPG and is easy to use. Another handy feature on HPG is that the command `module load astral` will automatically load the most recent version of the software that has been installed. The current version installed on HiperGator (as of March 2026) is version 5.15.5. You can always load a specific version by modifying the load command as: `module load astral/4.10.7`, substituting the version number as appropriate to get the one you want. This is especially useful if a beta version has been released that is not the default version loaded with `module load astral`, but you want to test it out.
 
 ## 4. The ASTRAL submission script and input file
 
-Let's start by looking at the submission script for ASTRAL: `astral.pthreads.slurm`.
+Let's start by looking at the submission script for ASTRAL: `astral.pthreads.sh`.
 
 Notice that there's a line we haven't seen in any our scripts before, which allocates memory to ASTRAL (technically, to any java application you have running, but since ASTRAL is the only one you'll run with this script, you can think of it as being specific to ASTRAL).
 ```
@@ -53,11 +53,11 @@ The `astral` command actually executes the program, and its flags are pretty sim
 
 Open the input file, `song_mammals.424.gene.tre` in TextWrangler and take a look at it. Confirm to yourself that this file contains a set of Newick-formatted gene trees. 
 
-1. How many gene trees are there in the input file? _______________________________
+1. How many gene trees are there in the input file? 
 
 ## 5. Running ASTRAL and working with output
 
-Go ahead and run ASTRAL by submitting your job to the queue:
+Change your email address in the bash file and then go ahead and run ASTRAL by submitting your job to the queue:
 ```
 sbatch astral.pthreads.sh
 ```
