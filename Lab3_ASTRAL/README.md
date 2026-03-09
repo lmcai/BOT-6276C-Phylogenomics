@@ -1,15 +1,12 @@
----
-title: "ASTRAL & BUCKy"
-author: "BOT 6276, Phylogenomics"
-date: "Spring 2020"
-output: pdf_document
----
+# Summary colascent based species tree inference in ASTRAL
 
 ## 1. Software we'll cover in lab today:
 
-1. ASTRAL
-2. BUCKy
-3. You will also need R and/or Rstudio
+ASTRAL [website](https://github.com/chaoszhang/ASTER)
+
+This updated `ASTER` package includes multiple ASTRAL-like tools that can accommodate gene duplications, gene tree uncertainties, etc.
+
+![Families of ASTRAL application from Zhang et al 2025 MBE](./ASTER.jpg)
 
 ## 2. Getting onto the server
 
@@ -19,20 +16,11 @@ By now, you should be able to:
 2. `cd` into your working directory (this is either `/ufrc/bot6276/<username>/`, or a folder in your PI's group)
 3. Make a new directory for this lab using `mkdir` and `cd` into it.
 4. Next, make two additional directories inside this directory:
-  - `mkdir Astral`
-  - `mkdir Bucky`
+  - `mkdir Lab3`
 5. Copy the files for today's lab to your new directories.
   For ASTRAL:
   - song_mammals.424.gene.tre
   - astral.pthreads.slurm
-  For BUCKy:
-  - buckydata.tar.gz
-  - y000.run1.t
-  - y000.run2.t
-  - y000.run3.t
-  - y000.run4.t
-  - alpha_exploration.r
-  - prior_standalone.r
 
 Check the contents of the directories using `ls` to make sure everything copied properly.
 
