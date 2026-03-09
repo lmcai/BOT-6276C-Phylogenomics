@@ -10,7 +10,7 @@ This updated `ASTER` package includes multiple ASTRAL-like tools that can accomm
 
 ## 2. Getting onto the server
 
-We will be using the ASTRAL version available on HiPerGator. Note that this is not the latest version. If you need to use some of the recently enabled function in the future, you can install aster using conda (see tutorial: https://github.com/chaoszhang/ASTER/blob/master/tutorial/astral4.md).
+We will be using the ASTRAL version available on HiPerGator. Note that this is not the latest version of astral. If you need to use some of the recently enabled functions in the future, you can install aster using conda (see tutorial: https://github.com/chaoszhang/ASTER/blob/master/tutorial/astral4.md).
 
 By now, you should be able to:
 
