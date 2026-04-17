@@ -193,13 +193,14 @@ To visualize the posterior probabilities of ancestral states, we will use the Re
 Open R.
 
 RevGadgets requires the ggtree package (Yu et al. 2017). First, install the ggtree and RevGadgets packages:
-
+```
 install.packages("devtools")
 library(devtools)
 install_github("GuangchuangYu/ggtree")
 install_github("revbayes/RevGadgets")
-Run this code (or use the script plot_anc_states_BiSSE.R):
-
+```
+Run this code:
+```
 library(ggplot2)
 library(RevGadgets)
 
@@ -218,3 +219,6 @@ plot <- plotAncStatesMAP(p_anc,
               legend.text = element_text(size=4))
 
 ggsave(paste0("BiSSE_anc_states_activity_period.png"),plot, width=8, height=8)
+```
+`BiSSE_anc_states_activity_period.png` should look similar to this:
+![Alt text](./BiSSE_anc_states_activity_period.png)
