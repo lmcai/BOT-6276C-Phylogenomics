@@ -58,10 +58,12 @@ num_taxa <- observed_phylogeny.ntips()
 Additionally, we initialize a variable for our vector of moves and monitors.
 ```
 moves    = VectorMoves()
-monitors = VectorMonitors()```
+monitors = VectorMonitors()
+```
 Finally, create a helper variable that specifies the number of states that the observed character has:
 ```
-NUM_STATES = 2```
+NUM_STATES = 2
+```
 
 
 ### Specify the Model
