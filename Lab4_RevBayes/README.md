@@ -53,7 +53,8 @@ data <- readCharacterData("data/primates_activity_period.nex")
 ```
 It will be convenient to get the number of sampled species num_taxa from the tree:
 ```
-num_taxa <- observed_phylogeny.ntips()```
+num_taxa <- observed_phylogeny.ntips()
+```
 Additionally, we initialize a variable for our vector of moves and monitors.
 ```
 moves    = VectorMoves()
