@@ -162,7 +162,7 @@ If you set up a bash file to run the full mcmc on HyperGator, you should get a f
 **Results summarization** 
 
 The last few lines of the script read in the ancestral state log file using a specific function called readAncestralStateTrace().
-``
+```
 anc_states = readAncestralStateTrace("output/primates_BiSSE_activity_period_anc_states.log")
 ```
 Then it writes an annotated tree to a file. This function will write a tree with each node labeled with the maximum a posteriori (MAP) state and the posterior probabilities for each state.
