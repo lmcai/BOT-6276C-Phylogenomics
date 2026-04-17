@@ -23,8 +23,9 @@ By now, you should be able to:
 
 We need
 ```
-song_mammals.424.gene.tre
-astral.pthreads.sh
+primates_activity_period.nex
+primates_tree.nex
+mcmc_BiSSE.Rev
 ```
 
 ## 3. The RevBayes script and input file
@@ -43,8 +44,8 @@ Now let’s start to analyze an example in RevBayes using the BiSSE model. Take 
 
 ### Read in the Data
 For this tutorial, we are assuming that the tree is “observed” and considered data. Thus, we will read in the dated phylogeny first.
-
-```observed_phylogeny <- readTrees("data/primates_tree.nex")[1]
+```
+observed_phylogeny <- readTrees("data/primates_tree.nex")[1]
 ```
 Next, we will read in the observed character states for primate activity period.
 ```
